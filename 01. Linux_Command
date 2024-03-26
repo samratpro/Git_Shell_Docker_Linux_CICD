@@ -1,0 +1,114 @@
+# Linux-Commands
+## Update
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
+## Install Package
+```
+sudo apt install <package name>
+sudo dpkg -i name.deb
+sudo rpm -i name.rpm
+```
+## Uninstall Software
+```
+dpkg --list     `To See Installed Software`
+sudo apt list --installed  `To See All Installed Software`
+sudo apt-get remove <package-name>
+sudo apt-get purge <package-name>
+sudo apt autoclean && sudo apt autoremove   `Auto Clean & Auto Remove unnecessary packages and files`
+`spectacle remove from kali` -- sudo apt remove kde-spectacle && sudo apt autoclean && sudo apt autoremove
+
+Ex:
+    code/now 1.85.2-1705561292 amd64 [installed,local]  (sudo apt list --installed )
+    sudo apt remove code/now
+    sudo apt purge code/now 
+
+```
+### Fix Broken
+```
+sudo apt update --fix-missing
+sudo apt install -f
+sudo dpkg --configure -a
+sudo dpkg -l | grep ^..R
+```
+## Install snap in Kali
+```
+sudo apt update
+sudo apt install snapd
+systemctl enable --now snapd apparmor
+sudo systemctl enable snapd.apparmor
+sudo systemctl start snapd.apparmor
+```
+## Software List
+```
+Update First         `sudo apt-get update`
+Python               `sudo apt-get install python3`
+Python Virtual Env   `sudo apt install python3-venv`
+Python pip3          `sudo apt-get install python3-pip`
+                     `sudo apt-get install build-essential`
+C/C++                `https://code.visualstudio.com/docs/cpp/config-linux`
+                      or see below...
+
+Jupyter Notebook     `https://snapcraft.io/jupyter`
+NodeJS               `sudo apt-get install nodejs`
+Git                  `sudo apt-get install git`   
+Docker               `https://snapcraft.io/docker`
+PyCharm              `https://snapcraft.io/pycharm-community`
+VS Code              `sudo apt-get install code`  "https://snapcraft.io/code"
+JAVA                 `https://www.oracle.com/java/technologies/downloads/`
+Netbeans             `https://snapcraft.io/netbeans`
+Microsoft Edge       `https://www.microsoft.com/en-us/edge/business/download?form=MA13H4`
+Qbittorrent          `sudo apt install qbittorrent`
+Chromium             `https://snapcraft.io/chromium`
+Chrome               `https://www.google.com/chrome/?platform=linux`
+Caprine(Messenger)   `https://snapcraft.io/caprine`
+LibreOffice          `https://snapcraft.io/libreoffice`  `https://www.libreoffice.org/download/download-libreoffice/`
+OBS                  `https://snapcraft.io/obs-studio`
+Skype                `https://snapcraft.io/skype`
+VLC                  `https://snapcraft.io/vlc`
+Zoom                 `https://zoom.us/download?os=linux`
+OpenShot(video)      `https://snapcraft.io/openshot-community`
+Shotcut/kdenlive
+Gcolor3(Color Pick)  `https://snapcraft.io/gcolor3`
+GNU (Photoshop)      `https://snapcraft.io/install/gimp/ubuntu`
+Flameshot(scrnshot)  `sudo apt install flameshot`     "For ubuntu" ... "https://flameshot.org/#download"
+                     `flameshot config`, `flameshot gui` sometime privacy setting can make problem
+remmina (RDP)        `https://snapcraft.io/remmina`
+OneNote              `https://snapcraft.io/onenote-desktop`
+System Monitor       `Buitin with ubuntu`
+
+```
+
+## Linux Keyboard Shotcut
+```
+- Open Settings → Devices → Keyboard → Shortcuts.
+- Search for 'print', click > backspace key > '+' > Enter. (Disable Existing)
+- Scroll down Custom Shotcut.
+- name it 'Flameshot' or 'PrintScreen'.
+- Define the command as 'flameshot gui'.
+- keyboard Prt Sc key > Enter
+```
+## Ubuntu Terminal Command Line Break like Kali
+```
+>> sudo nano .bashrc
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\n╰─$ '  ***** edit code 
+>> Ctrl + o
+>> Y
+or "Ctrl + h " > "Open .bashrc" > "EDit above line" > "Then Save"
+
+```
+## Important Commands
+```
+Ctrl + h             `To See hidden File in a Folder`
+echo $SHELL          `To see shell scripting path variable`
+chsh -s /bin/bash    `Fix path , need to restart OS after this command`
+```
+## Install Codeblocks and gcc compailer in linux
+```
+sudo apt install g++
+sudo add-apt-repository universe
+sudo apt update
+sudo apt install codeblocks
+sudo apt install codeblocks-contrib
+```
